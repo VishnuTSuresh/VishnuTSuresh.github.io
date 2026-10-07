@@ -1,37 +1,168 @@
-<html>
-    <head>
-        <title>Vishnu T Suresh</title>
-        <link rel="shortcut icon" href="logo.ico">
-        <link rel="stylesheet" href="style.css">
-        <script>
-            (function(i, s, o, g, r, a, m){
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] ||
-                function(){
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            
-            ga('create', 'UA-51540436-1', 'vishnutsuresh.github.io');
-			ga('require', 'displayfeatures');
-			ga('require', 'linkid', 'linkid.js');
-            ga('send', 'pageview');
-            
-        </script>
-    </head>
-    <body>
-        <div id="container">
-            <div id="name">
-                Vishnu T Suresh
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vishnu T Suresh · Backend Software Engineer</title>
+    <meta name="description" content="Vishnu T Suresh: backend software engineer working in Python on high-throughput systems and LLM agents in production. Hyderabad, India.">
+    <link rel="shortcut icon" href="logo.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="wrap hero-inner">
+            <div class="photo">
+                <!-- Add photo.jpg to the repo root; initials show until then -->
+                <img src="photo.jpg" alt="Vishnu T Suresh" onerror="this.remove()">
+                <span aria-hidden="true">VS</span>
             </div>
-            <div class="social">
-                <a id="facebook" href="https://www.facebook.com/vshntsrsh">f</a>
-                <a id="linkedin" href="http://www.linkedin.com/in/vishnutsuresh">in</a>
+            <div>
+                <h1>Vishnu T Suresh</h1>
+                <p class="tagline">Backend software engineer: Python, high-throughput systems, LLM agents in production.</p>
+                <p class="meta">Hyderabad, India · from Kochi, Kerala</p>
+                <nav class="links">
+                    <a href="mailto:vishnutsuresh@live.com">Email</a>
+                    <a href="https://github.com/VishnuTSuresh">GitHub</a>
+                    <a href="https://linkedin.com/in/vishnutsuresh">LinkedIn</a>
+                </nav>
             </div>
         </div>
-    </body>
+    </header>
+
+    <main class="wrap">
+        <section id="about">
+            <h2>About</h2>
+            <p>I'm a backend engineer with about 10 years in software. I explored front-end, data science and backend on purpose before choosing backend, so I understand systems end to end: the UI that calls the API, the data behind it, and the service in the middle.</p>
+            <p>My best-known work is rebuilding the voice-skill backend for Miko's educational robots for kids, taking it from 4 to 600+ requests per second. I also built a state machine library that became the standard across Miko's skill projects, and started Miko's GPT Skill platform in 2023. Since then I've been shipping LLM features to production: GPT-powered skills at Miko, then Major TOM, an autonomous Slack triage agent on the Claude Agent SDK, at Cognida.</p>
+            <p>The throughline: I build tools that make other engineers faster and systems easier to trust, from build tooling and a shared reporting framework to a state machine library, debugging tools and an agent for support. I care most about meaningful products, the kind where the mission matters.</p>
+            <div class="open-to">
+                <strong>Open to:</strong> full-time senior backend roles, especially on AI/LLM product teams or platform/developer-tooling teams at mission-driven product companies. India or remote. Not looking for freelance or collaboration.
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>Miko voice-skill backend scaling</h3>
+                    <p class="stat">4 → 600+ requests/sec</p>
+                    <p>Rebuilt the backend that runs Alexa-style voice skills on Miko's educational robots for kids. Moved blocking work off the request path by loading data at startup and batching writes every 3 seconds, and ran on PyPy with gevent. A later Java Vert.x version of the skills service reached 1000 RPS.</p>
+                    <ul class="tags"><li>Python</li><li>PyPy</li><li>gevent</li><li>Gunicorn</li><li>MySQL</li><li>Redis</li><li>Docker</li><li>Kubernetes</li><li>GCP</li><li>Java Vert.x</li></ul>
+                </article>
+
+                <article class="card">
+                    <h3>Major TOM: autonomous support triage agent</h3>
+                    <p class="where">Cognida</p>
+                    <p>An unattended Slack bot built on the Claude Agent SDK. It watched support channels, ran the team's debugging toolkit read-only against production, streamed its reasoning, and posted a root-cause analysis (summary, evidence, likely cause, next step). Replies in the thread resumed the session. Guardrails included a secrets-blocking hook, a per-issue USD cost cap, max turns, timeouts, a queue and AWS preflight checks. It ran in production until leadership shut it down as a priority decision.</p>
+                    <ul class="tags"><li>Python</li><li>Claude Agent SDK</li><li>Slack API</li><li>MongoDB</li><li>AWS</li><li>systemd</li></ul>
+                </article>
+
+                <article class="card">
+                    <h3>GPT Skill platform</h3>
+                    <p class="where">Miko · 2023</p>
+                    <p>Started and led Miko's platform for building conversational skills on the OpenAI ChatGPT API. Educational skills such as Space Tour Guide shipped to production, and Story Coach was named the year's hero feature by management. I also designed story-driven (Hero's Journey) and open-world (vector DB) skill types.</p>
+                    <ul class="tags"><li>Python</li><li>Flask</li><li>gevent</li><li>PyPy</li><li>OpenAI ChatGPT API</li><li>Vector database</li></ul>
+                </article>
+
+                <article class="card">
+                    <h3>Skill state machine library</h3>
+                    <p class="where">Miko</p>
+                    <p>A Python library for modelling conversational skill flow as explicit states and transitions. It became the standard across Miko's skill projects and was published on the internal Nexus repository.</p>
+                    <ul class="tags"><li>Python</li><li>Nexus</li></ul>
+                </article>
+
+                <article class="card">
+                    <h3>Notification without polling</h3>
+                    <p class="where">Miko · design, not built</p>
+                    <p>A design for server-to-robot sync that would let robots stop polling for notifications. Each robot gets a full snapshot when its WebSocket connects, then create/update/delete deltas broadcast over Kafka to load-balanced servers. Robots keep a persisted local store, so future notifications like birthdays and reminders fire on time. The design doc covers the trade-offs and known weak spots.</p>
+                    <ul class="tags"><li>Python</li><li>Kafka</li><li>WebSocket</li><li>MySQL</li><li>Kubernetes</li><li>Kong API Gateway</li></ul>
+                    <p class="card-link"><a href="https://bit.ly/3Uk4qCV">Read the design doc →</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>CUDA multiple linear regression</h3>
+                    <p class="where">Research internship · 2013</p>
+                    <p>Multiple linear regression implemented on NVIDIA GPUs with custom kernels plus CULA and cuBLAS.</p>
+                    <ul class="tags"><li>C++</li><li>CUDA</li><li>CULA</li><li>cuBLAS</li></ul>
+                    <p class="card-link"><a href="https://github.com/VishnuTSuresh/CUDALinearRegression">View on GitHub →</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <ol class="timeline">
+                <li>
+                    <div class="role">
+                        <h3>Senior Developer · Cognida.ai</h3>
+                        <span class="dates">Feb 2025 – present · Hyderabad</span>
+                    </div>
+                    <ul>
+                        <li>Built and ran Major TOM, an autonomous Claude Agent SDK triage bot that posted root-cause analyses for support tickets.</li>
+                        <li>Turned recurring support work into tooling: a fast debugging toolkit for agents, a dry-run/apply/revert field-rename script, and generic scheduled report exports reusable for any customer.</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="role">
+                        <h3>Lead Software Engineer · Miko</h3>
+                        <span class="dates">Jul 2023 – Aug 2024 · Mumbai (remote)</span>
+                    </div>
+                    <p class="promo">Promoted from Senior Python Developer (Apr 2022 – Jul 2023)</p>
+                    <ul>
+                        <li>Scaled the voice-skill backend for kids' educational robots from 4 to 600+ RPS; built the state machine library adopted across skill projects.</li>
+                        <li>Started the GPT Skill platform; won the Rising Star award.</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="role">
+                        <h3>Assistant Data Scientist · Nielsen</h3>
+                        <span class="dates">May 2019 – Apr 2022 · Kochi</span>
+                    </div>
+                    <ul>
+                        <li>Built a Google Sheets config generator with logic decoupled for TDD; caching and dependency-based validation made validation 8x faster.</li>
+                        <li>Built a storage adapter (datacache / S3 / local) for local development and testing, and a reporting framework packaged for reuse across projects.</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="role">
+                        <h3>Software Engineer (front-end) · Visual IQ</h3>
+                        <span class="dates">May 2014 – Jun 2017 · Kochi</span>
+                    </div>
+                    <ul>
+                        <li>Built a build tool that brought ES6, modules, linting and testing to an existing codebase (Webpack, Babel, Mocha); won the company's Innovation Award.</li>
+                        <li>Sped up a large optimization problem with genetic algorithms on the GPU.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3 class="sub">Education</h3>
+            <p><strong>IIT Roorkee</strong>: 5-year dual degree, B.Tech Process Engineering + MBA Operations <span class="dates">(2009 – 2014)</span></p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <dl class="skills">
+                <dt>Languages</dt><dd>Python (primary), Java, JavaScript, SQL, C++ (CUDA/OpenCL, older)</dd>
+                <dt>Backend</dt><dd>Flask, FastAPI, Gunicorn, gevent, PyPy, Java Vert.x, WebSocket, REST APIs</dd>
+                <dt>Data &amp; messaging</dt><dd>MySQL, MongoDB, Redis, Kafka, pandas</dd>
+                <dt>Infra</dt><dd>Docker, Kubernetes, AWS (S3, EC2, SES, CloudWatch), GCP</dd>
+                <dt>AI / LLM</dt><dd>Claude Agent SDK, OpenAI API, LLM agents in production (guardrails, cost caps), vector databases</dd>
+                <dt>Testing &amp; practice</dt><dd>pytest, TDD, performance tuning, production debugging, system design</dd>
+                <dt>Earlier</dt><dd>Machine learning, Spark, Airflow, Angular.js, Ember.js</dd>
+            </dl>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>The best way to reach me is email: <a href="mailto:vishnutsuresh@live.com">vishnutsuresh@live.com</a></p>
+            <nav class="links">
+                <a href="mailto:vishnutsuresh@live.com">Email</a>
+                <a href="https://github.com/VishnuTSuresh">GitHub</a>
+                <a href="https://linkedin.com/in/vishnutsuresh">LinkedIn</a>
+            </nav>
+        </section>
+    </main>
+
+    <footer class="wrap">© Vishnu T Suresh</footer>
+</body>
 </html>
